@@ -1,0 +1,8 @@
+.formContainer {
+    background-color: white;
+    border-radius: 12px;
+    padding: 32px 24px;
+    width: 320px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    text-align: center;
+}

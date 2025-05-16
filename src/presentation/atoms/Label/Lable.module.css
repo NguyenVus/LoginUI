@@ -1,0 +1,7 @@
+.label{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 10px 15px 0;
+    font-size: 0.9em;
+}
