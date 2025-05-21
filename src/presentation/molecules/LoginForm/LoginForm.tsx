@@ -4,11 +4,13 @@ import Input from '../../atoms/Input/Input';
 import Button from '../../atoms/Button/Button';
 import Label  from '../../atoms/Label/Label';
 import TogglePasswordButton from "@/presentation/atoms/TogglePasswordButton/TogglePasswordButton";
+import {useTranslations} from 'next-intl';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const t = useTranslations('LoginPage');
 
     const handleLogin = () => {
         alert(`Logging in with Email: ${email}`);
@@ -24,22 +26,24 @@ const LoginForm = () => {
 
     return (
         <div>
-            <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Input type="email" placeholder={t('email')} variant ='primary' value={email} onChange={(e) => setEmail(e.target.value)} />
             <div
                 style={{
                     position: 'relative',
             }}>
                 <Input
                     type={showPassword ? 'text' : 'password'}
-                    placeholder="Password"
+                    placeholder={t('password')}
                     value={password}
+                    variant ='secondary'
                     onChange={e => setPassword(e.target.value)}
                 />
                 <TogglePasswordButton show={showPassword} onToggle={toggleShowPassword}  />
             </div>
-            <Label text="Quên mật khẩu ?" />
-            <Button label="Login" onClick={handleLogin} variant='primary' />
-            <Button label="Login with Microsoft" onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
+            <Label text={t('forgot_password')}  />
+            <Button label={t('login')} onClick={handleLogin} variant='primary' />
+            <Button label={t('login_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
+            <Label text={t('dont_have_account')} href="/register" />
         </div>
     );
 };

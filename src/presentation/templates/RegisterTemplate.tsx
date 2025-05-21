@@ -1,18 +1,18 @@
 import React from 'react';
-import LoginBox from '../organisms/LoginBox/LoginBox';
+import RegisterBox from '../organisms/RegisterBox/RegisterBox';
 import Header from "@/presentation/organisms/Header/Header";
 import Footer from "@/presentation/organisms/Footer/Footer";
 
-const AuthTemplate = () => {
+const RegisterTemplate = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <Header />
             <div className="flex-grow">
-                <LoginBox />
+                <RegisterBox />
             </div>
             <Footer />
         </div>
     );
 };
 
-export default AuthTemplate;
+export default RegisterTemplate;

@@ -1,5 +1,6 @@
 import React from "react";
-import Style from '../Label/Lable.module.css'
+import Link from "next/link";
+import Style from "../Label/Lable.module.css";
 
 interface LabelProps {
     text: string;
@@ -7,15 +8,19 @@ interface LabelProps {
     onClick?: () => void;
 }
 
-const Label: React.FC<LabelProps> = ({ text, href, onClick}) => {
+const Label: React.FC<LabelProps> = ({ text, href, onClick }) => {
+    if (href) {
+        return (
+            <Link href={href} className={Style.label} onClick={onClick}>
+                {text}
+            </Link>
+        );
+    }
     return (
-        <a
-            className={Style.label}
-            href={href}
-            onClick={onClick}
-        >
+        <span className={Style.label} onClick={onClick}>
             {text}
-        </a>
+        </span>
     );
 };
+
 export default Label;

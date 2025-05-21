@@ -10,8 +10,12 @@ interface ButtonProps {
     altText?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, variant = 'primary' , iconSrc , altText }) => {
-    const styles = variant === 'primary' ? Style.buttonPrimary : Style.buttonSecondary;
+const Button: React.FC<ButtonProps> = ({ label, onClick, variant , iconSrc , altText }) => {
+    const styles   =  variant === 'primary'
+        ? Style.buttonPrimary
+        : variant === 'secondary'
+            ? Style.buttonSecondary
+            : '';
     return (
         <button className={`${Style.button} ${styles}`} onClick={onClick}>
             {iconSrc && (
