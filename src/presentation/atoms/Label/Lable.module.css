@@ -4,4 +4,6 @@
     align-items: center;
     margin: 10px 5px 15px 0;
     font-size: 0.9em;
+    text-decoration: none;
+    color: inherit;
 }
