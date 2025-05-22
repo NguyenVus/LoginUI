@@ -6,6 +6,7 @@ import Label  from '../../atoms/Label/Label';
 import TogglePasswordButton from "@/presentation/atoms/TogglePasswordButton/TogglePasswordButton";
 import PasswordMatchMessage from "@/presentation/molecules/PasswordMatchMessages/PasswordMatchMessages";
 import {useTranslations} from 'next-intl';
+import DividerWithText from "@/presentation/atoms/DividerWithText/DividerWithText";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -24,6 +25,10 @@ const LoginForm = () => {
 
     const handleRegister = () => {
         alert('Registering');
+    }
+
+    function handleMicrosoftLogin() {
+
     }
 
     return (
@@ -63,7 +68,8 @@ const LoginForm = () => {
                 <Label text={t("have_account")} />
                 <Label text={t("login")} href="/" />
             </div>
-
+            <DividerWithText text="or"/>
+            <Button label={t('signup_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
         </div>
     );
 };
