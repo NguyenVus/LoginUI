@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { useTransition } from 'react';
-import SelectOption from '../../atoms/SelectOption/SelectOption';
+import SelectOption from '@/presentation/molecules/SelectOption/SelectOption';
 
 
 const languageOptions = [
