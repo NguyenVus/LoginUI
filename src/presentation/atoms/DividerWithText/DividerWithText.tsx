@@ -6,14 +6,39 @@ interface DividerWithTextProps {
 
 const DividerWithText: React.FC<DividerWithTextProps> = ({ text }) => {
     return (
-        <div className="flex items-center justify-center my-6 ">
-            <div className="flex-grow mr-4 border-t border-gray-200"></div>
-
-            <span className="px-4 py-4 text-gray-500 text-sm bg-white z-10 ">
-                {text}
-            </span>
-
-            <div className="flex-auto ml-4 border-t border-gray-200"></div>
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                color: "#666",
+                margin: "5px 0",
+                padding:"0 20px"
+            }}
+        >
+            <div
+                style={{
+                    flex: 1,
+                    borderBottom: "1px solid #ccc",
+                    marginRight: 12,
+                }}
+            />
+            <span
+                style={{
+                    background: "white",
+                    padding: "0 5px",
+                    position: "relative",
+                    zIndex: 1,
+                }}
+            >
+        {text}
+      </span>
+            <div
+                style={{
+                    flex: 1,
+                    borderBottom: "1px solid #ccc",
+                    marginLeft: 12,
+                }}
+            />
         </div>
     );
 };
