@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
-import Button from '../../atoms/Button/Button';
+import ButtonLogin from '../../atoms/Button/ButtonLogin';
 import Label  from '../../atoms/Label/Label';
 import TogglePasswordButton from "@/presentation/atoms/TogglePasswordButton/TogglePasswordButton";
 import {useTranslations} from 'next-intl';
@@ -40,9 +40,9 @@ const LoginForm = () => {
                 />
                 <TogglePasswordButton show={showPassword} onToggle={toggleShowPassword}  />
             </div>
-            <Label text={t('forgot_password')}  />
-            <Button label={t('login')} onClick={handleLogin} variant='primary' />
-            <Button label={t('login_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
+            <Label text={t('forgot_password')} href="/" />
+            <ButtonLogin label={t('login')} onClick={handleLogin} variant='primary' />
+            <ButtonLogin label={t('login_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
             <Label text={t('dont_have_account')} href="/register" />
         </div>
     );

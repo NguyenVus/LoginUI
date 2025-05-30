@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../molecules/Logo/Logo';
 import LanguageSwitcher from '../../molecules/LanguageSwitcher/LanguageSwitcher';
-
+import ModeToogle from '../../atoms/ModeToggle/ModeToggle'
 const Header: React.FC = () => {
     return (
         <header className="flex items-center justify-between py-4 bg-white shadow-md sticky top-0 z-50 mx-[10px] h-16 relative">
@@ -14,6 +14,7 @@ const Header: React.FC = () => {
 
             <div className="flex-1 flex justify-end mr-8">
                 <LanguageSwitcher />
+                <ModeToogle/>
             </div>
 
         </header>

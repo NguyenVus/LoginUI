@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Input from '../../atoms/Input/Input';
-import Button from '../../atoms/Button/Button';
+import ButtonLogin from '../../atoms/Button/ButtonLogin';
 import Label  from '../../atoms/Label/Label';
 import TogglePasswordButton from "@/presentation/atoms/TogglePasswordButton/TogglePasswordButton";
 import PasswordMatchMessage from "@/presentation/molecules/PasswordMatchMessages/PasswordMatchMessages";
@@ -63,13 +63,13 @@ const LoginForm = () => {
             <PasswordMatchMessage password={password} retypePassword={retypePassword} />
 
 
-            <Button label={t("singup")}  onClick={handleRegister}/>
+            <ButtonLogin label={t("singup")} onClick={handleRegister}/>
             <div className="flex justify-end ">
                 <Label text={t("have_account")} />
                 <Label text={t("login")} href="/" />
             </div>
             <DividerWithText text="or"/>
-            <Button label={t('signup_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
+            <ButtonLogin label={t('signup_with_microsoft')} onClick={handleMicrosoftLogin} variant="secondary" iconSrc={'/assets/logos/micrs.png'}/>
         </div>
     );
 };

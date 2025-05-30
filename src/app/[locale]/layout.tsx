@@ -5,6 +5,7 @@ import "../globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import {ThemeProvider} from "@/presentation/molecules/Theme/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,9 +39,16 @@ export default async function LocaleLayout({
     }
 
     return (
-        <html lang={locale}>
+        <html lang={locale} suppressHydrationWarning>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </ThemeProvider>
         </body>
         </html>
     );

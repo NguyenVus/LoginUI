@@ -10,7 +10,7 @@ interface ButtonProps {
     altText?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, variant , iconSrc , altText }) => {
+const ButtonLogin: React.FC<ButtonProps> = ({ label, onClick, variant , iconSrc , altText }) => {
     const styles   =  variant === 'primary'
         ? Style.buttonPrimary
         : variant === 'secondary'
@@ -33,4 +33,4 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, variant , iconSrc , alt
     );
 };
 
-export default Button;
+export default ButtonLogin;
